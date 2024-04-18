@@ -1,0 +1,18 @@
+---
+import ItchioItem from "./ItchioItem.astro";
+import SteamItem from "./SteamItem.astro";
+---
+
+<section class="w-full flex flex-col items-center px-8 lg:px-0">
+    <h2
+      class="text-3xl max-w-max font-bold text-center px-4 py-4 bg-gradient-to-r from-purple-700 to-green-500 flex justify-center items-center
+    rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer my-6"
+    >
+      Play The Game Now!
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-1 w-3/4 gap-6 mt-2">
+      <SteamItem />
+      <ItchioItem />
+    </div>
+  </section>

@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+
+import StoreItem from "./StoreItem.astro";
+import itchioImg from "../../public/itchio_img.png"
+---
+
+<StoreItem title="Itch.io">
+  <div class=" bg-[#002716] py-4 px-1 rounded-b-xl">
+    <!-- <Image src={itchioImg} alt={'Itchio Image'} loading={'eager'} class='h-full'/> -->
+    <iframe
+    title="Itch.io"
+      src="https://itch.io/embed/2071667?linkback=true&border_width=0&bg_color=002716&fg_color=ffffff&link_color=074fa1&border_color=001109"
+      class="w-full flex flex-col"
+      width=""
+      height=""></iframe>
+  </div>
+</StoreItem>
