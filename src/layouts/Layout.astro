@@ -1,12 +1,17 @@
 ---
-import Footer from '../components/Footer.astro';
-import NavBar from '../components/NavBar.astro';
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+
+import grapImg from "../../public/grap-image.jpg";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const description =
+  "I Wani Hug that Gator! is a choice-driven narrative about teenagers struggling to find their way. Help Inco, loser highschooler extraordinaire, navigate his budding friendships (and romance!) while surviving being the only human in a dinosaur-filled school.";
 ---
 
 <!doctype html>
@@ -15,11 +20,20 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="I Wani Hug that Gator!" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={grapImg.src} />
+    <meta property="og:image:alt" content="I Wani Hug That Gator - Cover" />
+
     <title>{title}</title>
   </head>
-  <body class=" flex flex-col items-center relative ">
+  <body class="flex flex-col items-center relative">
     <NavBar />
     <div class="bg-room object-cover w-screen h-screen fixed -z-10"></div>
     <slot />
