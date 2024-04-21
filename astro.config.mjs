@@ -6,7 +6,7 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  image: { service: passthroughImageService },
+  image: { service: passthroughImageService() },
   i18n: {
     defaultLocale: "en",
     locales: ["es", "en"],
