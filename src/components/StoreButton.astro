@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import steamLogo from "../../public/icons/steam-logo.png";
+import itchioLogo from "../../public/icons/itch_io_logo_icon.png";
+
+interface Props {
+  name: "Steam" | "Itchio";
+  link: string;
+}
+
+const { name, link } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  class={`flex justify-center items-center hover:shadow px-4 py-3 rounded-xl
+   ${
+     name === "Steam"
+       ? "bg-lime-600 hover:bg-lime-500 hover:shadow-lime-500"
+       : "bg-red-600 hover:bg-red-500 hover:shadow-red-500"
+   }`}
+>
+  <!-- bg-lime-600 hover:bg-lime-500 hover:shadow-lime-500 -->
+  <Image
+    src={name === "Steam" ? steamLogo : itchioLogo}
+    alt={`${name.toLocaleLowerCase()}-logo`}
+    class={`mr-3 size-[40px] ${name === "Itchio" && "invert"}`}
+    loading={"eager"}
+  />
+  <span class="text-2xl font-semibold">Buy On Steam</span>
+</a>
+<!-- loading={"eager"} -->

@@ -1,12 +1,28 @@
 ---
 import MusicItem from "./MusicItem.astro";
+import ostCoverA from "../../public/ost_cover_a.webp";
+import ostCoverB from "../../public/ost_cover_b.webp";
+
 ---
 
-<section class="w-full flex flex-col">
-  <h2>Awsome Soundtrack</h2>
+<section class="w-full flex flex-col gap-6">
+  <h2 class="text-center font-bold text-4xl mb-2 md:mb-0">Awsome Soundtrack</h2>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2">
-    <MusicItem />
-    <MusicItem />
+  <div
+    class="w-full flex flex-col flex-wrap md:flex-row place-content-center gap-12 px-[100px]"
+  >
+    <MusicItem
+      image={ostCoverA}
+      htext="Featuring over 3 hours of original songs,"
+      text={`this side contains the more scene specific and motif focused tracks. A collage
+        of different genres and styles, from indie rock and electronic to modern composition
+        and pop.`}
+    />
+    <MusicItem
+      image={ostCoverB}
+      htext="Featuring the works of 8 musicians,"
+      text={`this side is a compilation of free music used typically when the story relaxes; Has a bit of lo-fi, 
+      electronica, rock, accoustics, and synthy goodness.`}
+    />
   </div>
 </section>

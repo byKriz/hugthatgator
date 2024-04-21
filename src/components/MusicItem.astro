@@ -2,19 +2,25 @@
 import { Image } from "astro:assets";
 import soundtrackImg from "../../public/ost_cover_a.webp";
 import TextContainer from "./TextContainer.astro";
+
+interface Props {
+  image: ImageMetadata;
+  htext: string;
+  text: string;
+}
+
+const { image, htext, text } = Astro.props;
 ---
 
-<article class="w-full flex flex-col justify-center items-center p-4 gap-6">
-  <Image src={soundtrackImg} alt={"Album Image"} class="w-[400px]" />
+<article
+  class="w-full flex flex-col justify-center items-center gap-6 max-w-[400px]"
+>
+  <Image src={image} alt={"Album"} class="w-full" />
 
-  <TextContainer className=" max-w-[450px]">
+  <TextContainer className="max-w-[450px]">
     <p class="text-xl">
-      <span class="text-green-500"
-        >Featuring over 3 hours of original songs,</span
-      >
-      this side contains the more scene specific and motif focused tracks. A collage
-      of different genres and styles, from indie rock and electronic to modern composition
-      and pop.
+      <span class="text-green-500">{htext}</span>
+      {text}
     </p>
   </TextContainer>
 </article>
