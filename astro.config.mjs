@@ -1,18 +1,19 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: "server",
+  image: { service: passthroughImageService },
   i18n: {
     defaultLocale: "en",
     locales: ["es", "en"],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
   integrations: [tailwind()],
-  adapter: vercel()
+  adapter: vercel(),
 });
