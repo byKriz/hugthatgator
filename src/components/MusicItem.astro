@@ -13,11 +13,11 @@ const { image, htext, text } = Astro.props;
 ---
 
 <article
-  class="w-full flex flex-col justify-center items-center gap-6 max-w-[400px]"
+  class="w-full flex flex-col justify-center items-center gap-6"
 >
   <Image src={image} alt={"Album"} class="w-full" />
 
-  <TextContainer className="max-w-[450px]">
+  <TextContainer className="">
     <p class="text-xl">
       <span class="text-green-500">{htext}</span>
       {text}

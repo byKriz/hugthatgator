@@ -2,14 +2,13 @@
 import MusicItem from "./MusicItem.astro";
 import ostCoverA from "../../public/ost_cover_a.webp";
 import ostCoverB from "../../public/ost_cover_b.webp";
-
+import SectionContainer from "./SectionContainer.astro";
 ---
 
-<section class="w-full flex flex-col gap-6">
-  <h2 class="text-center font-bold text-4xl mb-2 md:mb-0">Awsome Soundtrack</h2>
-
+<SectionContainer titles="Awsome Soundtrack">
   <div
-    class="w-full flex flex-col flex-wrap md:flex-row place-content-center gap-12 px-[100px]"
+    class="w-full grid items-start grid-cols-1 md:grid-cols-2 gap-12
+     max-w-[1000px]"
   >
     <MusicItem
       image={ostCoverA}
@@ -25,4 +24,6 @@ import ostCoverB from "../../public/ost_cover_b.webp";
       electronica, rock, accoustics, and synthy goodness.`}
     />
   </div>
-</section>
+</SectionContainer>
+
+<!-- <section class="w-full flex flex-col gap-6"></section> -->
