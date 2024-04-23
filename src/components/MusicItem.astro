@@ -2,20 +2,30 @@
 import { Image } from "astro:assets";
 import soundtrackImg from "../../public/ost_cover_a.webp";
 import TextContainer from "./TextContainer.astro";
+import CustomButton from "./CustomButton.astro";
+import type { LinkModel } from "../models/LinkModel";
 
 interface Props {
   image: ImageMetadata;
   htext: string;
   text: string;
+  items?: LinkModel[];
 }
 
-const { image, htext, text } = Astro.props;
+const { image, htext, text, items } = Astro.props;
 ---
 
-<article
-  class="w-full flex flex-col justify-center items-center gap-6"
->
+<article class="w-full flex flex-col justify-center items-center gap-6">
   <Image src={image} alt={"Album"} class="w-full" />
+  <!-- {links && links.} -->
+  <div class="flex flex-wrap gap-3 justify-center items-center">
+    {
+      items &&
+        items.map((item) => (
+          <CustomButton name={item.name} url={item.url} color={item.color} />
+        ))
+    }
+  </div>
 
   <TextContainer className="">
     <p class="text-xl">

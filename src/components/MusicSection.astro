@@ -3,12 +3,14 @@ import MusicItem from "./MusicItem.astro";
 import ostCoverA from "../../public/ost_cover_a.webp";
 import ostCoverB from "../../public/ost_cover_b.webp";
 import SectionContainer from "./SectionContainer.astro";
+
+import { coverALink, coverBLink } from "../consts/musicLinks";
 ---
 
 <SectionContainer titles="Awsome Soundtrack">
   <div
-    class="w-full grid items-start grid-cols-1 md:grid-cols-2 gap-12
-     max-w-[1000px]"
+    class="w-full grid gap-12 items-start grid-cols-1 lg:px-24 lg:grid-cols-2 
+     max-w-[1000px] xl:px-0"
   >
     <MusicItem
       image={ostCoverA}
@@ -16,12 +18,14 @@ import SectionContainer from "./SectionContainer.astro";
       text={`this side contains the more scene specific and motif focused tracks. A collage
         of different genres and styles, from indie rock and electronic to modern composition
         and pop.`}
+      items={coverALink}
     />
     <MusicItem
       image={ostCoverB}
       htext="Featuring the works of 8 musicians,"
       text={`this side is a compilation of free music used typically when the story relaxes; Has a bit of lo-fi, 
       electronica, rock, accoustics, and synthy goodness.`}
+      items={coverBLink}
     />
   </div>
 </SectionContainer>
