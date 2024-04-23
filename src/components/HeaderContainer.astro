@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../public/logo.png";
+
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <header
@@ -16,6 +20,6 @@ import logo from "../../public/logo.png";
   </h1>
 
   <span class="text-xl font-semibold text-green-300 text-center"
-    >The Prehistoric Romance a million-and-one years in the making!</span
+    >{i18n?.Layout.Header.subTitle}</span
   >
 </header>

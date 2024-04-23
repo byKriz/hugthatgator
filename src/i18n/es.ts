@@ -2,7 +2,7 @@ export const spanish = {
   Layout: {
     Header: {
       subTitle:
-        "The Prehistoric Romance a million-and-one years in the making!",
+        "¡El romance prehistórico que se gestó hace un millón y un años!",
     },
   },
   Footer: "Sitio web hecho por ",
