@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 import steamLogo from "../../public/icons/steam-logo.png";
 import itchioLogo from "../../public/icons/itch_io_logo_icon.png";
 
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
 interface Props {
   name: "Steam" | "Itchio";
   link: string;
@@ -28,6 +32,7 @@ const { name, link } = Astro.props;
     class={`mr-3 size-[40px] ${name === "Itchio" && "invert"}`}
     loading={"eager"}
   />
-  <span class="text-2xl font-semibold">Buy On {name}</span>
+  <span class="text-2xl font-semibold text-white"
+    >{i18n?.Components.StoreButton} {name}</span
+  >
 </a>
-<!-- loading={"eager"} -->

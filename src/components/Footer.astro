@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 
 import footerLogoLarge from "../../public/footerlogo.png";
 import footerLogoShort from "../../public/cavemanonlogo.png";
+
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <footer
@@ -12,7 +16,7 @@ import footerLogoShort from "../../public/cavemanonlogo.png";
     <small class="text-base"
       >© Cavemanon Productions 2024
       <br />
-      Website by
+      {i18n?.Footer}
       <a href="https://github.com/byKriz" target="_blank" class="underline underline-offset-1">byKriz</a>
     </small>
   </div>

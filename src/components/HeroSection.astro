@@ -4,6 +4,10 @@ import SectionContainer from "./SectionContainer.astro";
 import StoreButton from "./StoreButton.astro";
 import TextContainer from "./TextContainer.astro";
 import TrailerVideo from "./TrailerVideo.astro";
+
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <SectionContainer>
@@ -19,11 +23,6 @@ import TrailerVideo from "./TrailerVideo.astro";
     />
   </div>
   <TextContainer>
-    <p class="max-w-[800px]">
-      <span class="text-green-500"> I Wani Hug that Gator! </span>
-      is a choice-driven narrative about teenagers struggling to find their way.
-      Help Inco, loser highschooler extraordinaire, navigate his budding friendships
-      (and romance!) while surviving being the only human in a dinosaur-filled school.
-    </p>
+    <p class="w-full" set:html={i18n!.HomePage.HeroSection.principalText} />
   </TextContainer>
 </SectionContainer>
