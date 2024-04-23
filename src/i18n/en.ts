@@ -12,7 +12,7 @@ export const english = {
         "<span>I Wani Hug that Gator!</span> is a choice-driven narrative about teenagers struggling to find their way. Help Inco, loser highschooler extraordinaire, navigate his budding friendships (and romance!) while surviving being the only human in a dinosaur-filled school.",
     },
     MusicSection: {
-      Title: "Awsome Soundtrack",
+      Title: "Awesome Soundtrack",
       CoverA: {
         htext: "Featuring over 3 hours of original songs,",
         text: `this side contains the more scene specific and motif focused tracks. A collage
