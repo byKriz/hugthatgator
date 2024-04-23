@@ -4,20 +4,12 @@ import MusicSection from "../MusicSection.astro";
 import HeroSection from "../HeroSection.astro";
 import HeaderContainer from "../HeaderContainer.astro";
 
-// import { getI18N } from "../../i18n";
-// const { currentLocale } = Astro;
-// const i18n = getI18N({ currentLocale });
+import { getI18N } from "../../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout title="I Wani Hug That Gator">
-  <HeaderContainer />
-  <main
-    class="text-white flex flex-col justify-center items-center w-full py-8
-    bg-gradient-to-t to-slate-700/75 via-emerald-950/75 from-violet-950/75 backdrop-blur-lg"
-  >
-    <HeroSection />
-
-    <!-- <BuySection /> -->
-    <MusicSection />
-  </main>
+  <HeroSection />
+  <MusicSection />
 </Layout>
