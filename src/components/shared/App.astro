@@ -1,10 +1,8 @@
 ---
-import Image from "astro/components/Image.astro";
-
 import Layout from "../../layouts/Layout.astro";
-import logo from "../../../public/logo.png";
 import MusicSection from "../MusicSection.astro";
 import HeroSection from "../HeroSection.astro";
+import HeaderContainer from "../HeaderContainer.astro";
 
 // import { getI18N } from "../../i18n";
 // const { currentLocale } = Astro;
@@ -12,18 +10,10 @@ import HeroSection from "../HeroSection.astro";
 ---
 
 <Layout title="I Wani Hug That Gator">
-  <header
-    class="flex flex-col items-center justify-center w-full min-h-[500px] gap-2 relative"
-  >
-    <Image src={logo} alt={"logo"} class="w-full max-w-96" loading={"eager"} />
-
-    <span class="text-xl font-semibold text-green-300"
-      >The Prehistoric Romance a million-and-one years in the making!</span
-    >
-  </header>
+  <HeaderContainer />
   <main
     class="text-white flex flex-col justify-center items-center w-full py-2
-    bg-gradient-to-t from-emerald-950/75 to-slate-700/75 backdrop-blur-lg"
+    bg-gradient-to-t to-slate-700/75 via-emerald-950/75 from-violet-950/75 backdrop-blur-lg"
   >
     <HeroSection />
 

@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/logo.png";
+---
+
+<header
+  class="flex flex-col items-center justify-center w-full min-h-[450px] gap-5 relative px-8"
+>
+  <h1>
+    <Image
+      src={logo}
+      alt={"I Wani Hug That Gator - Logo"}
+      class="w-full max-w-96"
+      loading={"eager"}
+    />
+  </h1>
+
+  <span class="text-xl font-semibold text-green-300 text-center"
+    >The Prehistoric Romance a million-and-one years in the making!</span
+  >
+</header>
