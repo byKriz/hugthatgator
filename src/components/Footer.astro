@@ -1,1 +1,30 @@
-<footer class="h-[50px] w-full bg-violet-950 text-white">Footer</footer>
+---
+import { Image } from "astro:assets";
+
+import footerLogoLarge from "../../public/footerlogo.png";
+import footerLogoShort from "../../public/cavemanonlogo.png";
+---
+
+<footer
+  class="min-h-[100px] w-full bg-zinc-900 text-white py-4 px-6 flex justify-between items-center"
+>
+  <div>
+    <small class="text-base"
+      >© Cavemanon Productions 2024
+      <br />
+      Website by
+      <a href="https://github.com/byKriz" target="_blank" class="underline underline-offset-1">byKriz</a>
+    </small>
+  </div>
+
+  <Image
+    src={footerLogoLarge}
+    alt={"footer logo large"}
+    class={"w-2/12 object-scale-down hidden md:block "}
+  />
+  <Image
+    src={footerLogoShort}
+    alt={"footer logo large"}
+    class={"w-2/12 object-scale-down block md:hidden p-1"}
+  />
+</footer>
