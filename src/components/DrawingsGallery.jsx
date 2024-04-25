@@ -7,14 +7,11 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import screenshot from "../../public/screenshots/screenshot5.webp";
-
-const algo = "../../public/drawings/drawing3.webp"
-
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Image } from "astro:assets";
 
-export const DrawingsGallery = () => {
+
+
+export const DrawingsGallery = ({imgList}) => {
   return (
     <>
       <Swiper
@@ -37,28 +34,28 @@ export const DrawingsGallery = () => {
       >
         <SwiperSlide>
           <img
-            src="../../public/drawings/drawing1.webp"
+            src={imgList[0]}
             alt=""
             className="rounded-xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="../../public/drawings/drawing2.webp"
+            src={imgList[1]}
             alt=""
             className="rounded-xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="../../public/drawings/drawing3.webp"
+            src={imgList[2]}
             alt=""
             className="rounded-xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="../../public/drawings/drawing4.webp"
+            src={imgList[3]}
             alt=""
             className="rounded-xl"
           />
