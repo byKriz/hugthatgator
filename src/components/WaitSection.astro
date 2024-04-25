@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import SectionContainer from "./SectionContainer.astro";
+import TextContainer from "./TextContainer.astro";
+
+import oliviaScreenshot from "../../public/screenshots/olivia-screenshot.webp";
+
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<SectionContainer titles={i18n?.HomePage.WaitSection.Title}>
+  <Image
+    src={oliviaScreenshot}
+    alt={"Olivia ScreenShot"}
+    class={"rounded-xl"}
+  />
+
+  <TextContainer>
+    <p set:html={i18n?.HomePage.WaitSection.text} />
+  </TextContainer>
+</SectionContainer>

@@ -9,7 +9,7 @@ export const english = {
   HomePage: {
     HeroSection: {
       principalText:
-        "<span>I Wani Hug that Gator!</span> is a choice-driven narrative about teenagers struggling to find their way. Help Inco, loser highschooler extraordinaire, navigate his budding friendships (and romance!) while surviving being the only human in a dinosaur-filled school.",
+        "<span>I Wani Hug that Gator!</span> is a visual novel with multiple endings about second chances and the power of accepting who you are, where choices matter. It shapes how Inco will make the most of his senior year, and how the relationships he forms along the way will develop. There is one relationship in particular that makes him feel very confused inside....",
     },
     MusicSection: {
       Title: "Awesome Soundtrack",
@@ -25,6 +25,14 @@ export const english = {
         electronica, rock, accoustics, and synthy goodness.`,
       },
     },
+    IntroSection: {
+      Title: "Wait, what do you mean we're moving?",
+      text: "Great, just as Inco was getting ready to enter his senior year of high school, his parents decide to uproot his life and move across the country. I guess it's time for a fresh start. Sure, Inco didn't have many (or any) friends at his old school, and of course, he was so far down the social ladder that he had to get a lesson from buceo..... Wait, why was he complaining about moving?",
+    },
+    WaitSection: {
+      Title: "Wait, I'm being graded on this?!",
+      text: "Make friends, reconcile enemies, and find out how Inco might repair his miserable excuse for a social life. But beware: The choices you make expand the relationships with Inco's classmates and determine which of the four unique endings you'll receive. Maybe Inco should have spent a little less time studying and a little more time learning how to get along with people...."
+    }
   },
   Components: {
     StoreButton: "Buy On",
