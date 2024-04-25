@@ -7,7 +7,7 @@ const { className } = Astro.props;
 ---
 
 <article
-  class={`w-full text-white flex flex-col items-center rounded-xl text-2xl [&>p]:w-full ${className}`}
+  class={`w-full text-white flex flex-col items-center rounded-xl [&>p]:w-full text-xl lg:text-2xl ${className}`}
 >
   <slot />
 </article>
