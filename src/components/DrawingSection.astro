@@ -1,0 +1,19 @@
+---
+import { DrawingsGallery } from "./DrawingsGallery";
+import SectionContainer from "./SectionContainer.astro";
+
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+---
+
+<SectionContainer titles="Express your creativity!" >
+    <DrawingsGallery client:load/>
+    
+</SectionContainer>
+
+<style>
+    img {
+        border-radius: 0.75rem/* 12px */;
+    }
+</style>
+
