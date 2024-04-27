@@ -3,8 +3,9 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    // "paths": {
-    //   "@components": ["./src/component"]
-    // }
+    "paths": {
+      "@/*": ["./src/*"],
+      "@public": ["../public"]
+    }
   }
 }
