@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-import SectionContainer from "./SectionContainer.astro";
-import TextContainer from "./TextContainer.astro";
+import SectionContainer from "../../containers/SectionContainer.astro";
+import TextContainer from "../../containers/TextContainer.astro";
 
-import screenshot from "../../public/screenshots/screenshot5.webp";
+import screenshot from "../../../../public/screenshots/screenshot5.webp";
 
-import { getI18N } from "../i18n";
+import { getI18N } from "../../../i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---

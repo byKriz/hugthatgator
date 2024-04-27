@@ -1,12 +1,12 @@
 ---
-import MusicItem from "./MusicItem.astro";
-import ostCoverA from "../../public/ost_cover_a.webp";
-import ostCoverB from "../../public/ost_cover_b.webp";
-import SectionContainer from "./SectionContainer.astro";
+import MusicItem from "../../MusicItem.astro";
+import ostCoverA from "../../../../public/ost_cover_a.webp";
+import ostCoverB from "../../../../public/ost_cover_b.webp";
+import SectionContainer from "../../containers/SectionContainer.astro";
 
-import { coverALink, coverBLink } from "../consts/musicLinks";
+import { coverALink, coverBLink } from "../../../consts/musicLinks";
 
-import { getI18N } from "../i18n";
+import { getI18N } from "../../../i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
