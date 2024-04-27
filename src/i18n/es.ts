@@ -31,6 +31,9 @@ export const spanish = {
     WaitSection: {
       Title: "Espera, ¡¿me están calificando por esto?!",
       text: "Haz amigos, reconcilia enemigos y averigua cómo podría Inco reparar su miserable excusa de vida social. Pero ten cuidado: Las decisiones que tomes amplían las relaciones con los compañeros de clase de Inco y determinan cuál de los cuatro finales únicos recibirás. Quizá Inco debería haber dedicado un poco menos de tiempo a estudiar y un poco más a aprender a relacionarse con la gente..."
+    },
+    DrawingSection: {
+      Title: "¡Expresa tu creatividad!"
     }
   },
   Components: {

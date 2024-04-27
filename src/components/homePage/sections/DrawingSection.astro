@@ -1,13 +1,15 @@
 ---
-import { getImage } from "astro:assets";
-
 import { DrawingsGallery } from "../DrawingsGallery";
 import SectionContainer from "../../containers/SectionContainer.astro";
 
 import { imgList } from "../../../consts/drawingsImages";
+
+import { getI18N } from "../../../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer titles="Express your creativity!">
+<SectionContainer titles={i18n?.HomePage.DrawingSection.Title}>
   <DrawingsGallery client:load imgList={imgList} />
 </SectionContainer>
 
