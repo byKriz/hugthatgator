@@ -1,0 +1,17 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import Char from "../../../components/pages/character/Char.astro";
+import { CHARACTERS } from "../../../consts/characters";
+
+const { id } = Astro.params;
+
+export const getStaticPaths = (() => {
+  const path = CHARACTERS.map((char) => ({ params: { id: char.id } }));
+  return path;
+}) satisfies GetStaticPaths;
+
+const char = CHARACTERS.find((char) => id === char.id);
+---
+
+<Char char={char!}/>

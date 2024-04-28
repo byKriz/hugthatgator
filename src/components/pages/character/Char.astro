@@ -1,0 +1,15 @@
+---
+
+import CharacterLayout from "../../../layouts/CharacterLayout.astro";
+import type { CharacterType } from "../../../models/CharacterType";
+
+interface Props {
+    char: CharacterType
+}
+
+const {char} = Astro.props
+---
+
+<CharacterLayout title="char" char={char}>
+    <h1>{char.name}</h1>
+</CharacterLayout>
