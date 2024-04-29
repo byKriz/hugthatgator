@@ -13,29 +13,49 @@ const cleanLink = (lang: string | undefined, charId: string) => {
 ---
 
 <SectionContainer titles="Meet our cast!">
-  <div class="grid grid-cols-3 w-full items-end gap-2">
+  <div class="grid grid-cols-2 md:grid-cols-3 w-full items-end gap-6">
     {
-      CHARACTERS.map((char) => (
-        <a href={cleanLink(currentLocale, char.id)}>
-          <article class="flex flex-col items-center justify-center">
-            <Image
-              src={char.img}
-              alt={`Meet ${char.name}`}
-              class={"w-[150px]"}
-              transition:name={`char-img-${char.id}`}
-            />
-            {/* <img
-              src={char.img}
-              alt={`Meet ${char.name}`}
-              class={"w-[80px]"}
-              transition:name={`char-img-${char.id}`}
-            /> */}
-            <span class=" font-bold" transition:name={`char-name-${char.id}`}>
-              {char.name}
-            </span>
-          </article>
-        </a>
-      ))
+      CHARACTERS.map((char, index) => {
+        console.log({ char: char.name, index });
+
+        return (
+          <a
+            href={cleanLink(currentLocale, char.id)}
+            class={` bg-gray-500/70 rounded-xl p-5 backdrop-blur-lg`}
+          >
+            <article class="[&>div>img]:">
+              <div class=" flex items-center justify-center p-5 ">
+                <Image
+                  src={char.img}
+                  alt={`Meet ${char.name}`}
+                  loading={"lazy"}
+                  transition:name={`char-img-${char.id}`}
+                  class:list={[
+                    "w-auto h-[200px] hover:scale-110 duration-300 ease-in-out",
+                    {
+                      "-ml-4": char.id === "iadakan",
+                      "-ml-9": char.id === "damien",
+                      "-ml-5": char.id === "ben",
+                      "-ml-6": char.id === "mia",
+                    },
+                  ]}
+                />
+              </div>
+
+              <div class="w-full flex justify-center">
+                <span
+                  class="text-center font-bold text-xl"
+                  transition:name={`char-name-${char.id}`}
+                >
+                  {char.name}
+                </span>
+              </div>
+            </article>
+          </a>
+        );
+      })
     }
   </div>
 </SectionContainer>
+
+<style></style>

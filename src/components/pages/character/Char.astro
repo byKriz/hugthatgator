@@ -11,21 +11,44 @@ const { char } = Astro.props;
 ---
 
 <CharacterLayout title={`Meet ${char.name}!`} char={char}>
-  <div class="grid grid-cols-1 md:grid-cols-2">
-    <Image
-      src={char.img}
-      alt={char.name}
-      class={"w-[300px]"}
-      transition:name={`char-img-${char.id}`}
-    />
-    <div class="flex flex-col">
-      <h1
-        transition:name={`char-name-${char.id}`}
-        class="font-semibold text-4xl"
+  <div class="flex flex-col md:grid md:grid-cols-2">
+    <div class="flex justify-center items-center w-full relative">
+      <Image
+        src={char.img}
+        alt={char.name}
+        class={"w-auto z-10 max-h-[400px] md:max-h-[700px]"}
+        loading={"eager"}
+        transition:name={`char-img-${char.id}`}
+      />
+      <!-- <div
+        class="size-[300px] bg-purple-400 z-0 absolute top-[50%] left-1/4 rounded-full"
       >
+      </div> -->
+    </div>
+    <div
+      class="flex flex-col px-4 [&>p]:bg-black/55 [&>p]:px-4 [&>p]:py-2 [&>p]:rounded-xl [&>p]:mb-4"
+    >
+      <h1 class="font-semibold text-4xl px-2 mb-4">
         Meet
-        <span class="font-bold">{char.name}</span>
+        <span class="font-bold" transition:name={`char-name-${char.id}`}
+          >{char.name}</span
+        >
       </h1>
+      <p class="">
+        <span>Personality:</span> AMBITIOUS, NAIVE, ASPIRING PHOTOGRAPHER, THE NEW
+        ARRIVAL AT ST. HAMMOND HIGH SCHOOL
+      </p>
+      <p>
+        Inco dreams of making a name for himself, and views his senior year as
+        his last shot at it. However, nothing could have prepared him for what
+        the year would throw at him. See through his shades as he bungles along
+        in his new dino-dominated school like a proverbial
+        'primordial-ancestor-out-of-water'. Prepare to grit your teeth as he
+        awkwardly fumbles his way through teenage acceptance (or lack thereof),
+        personal vendettas, parental woes and interspecies conflicts. Who knows,
+        he may even succeed at some of these things if you can manage to help
+        him pull his head out of his ass long enough.
+      </p>
     </div>
   </div>
   <!-- <img
