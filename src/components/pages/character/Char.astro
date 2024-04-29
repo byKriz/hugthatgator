@@ -11,12 +11,12 @@ const { char } = Astro.props;
 ---
 
 <CharacterLayout title={`Meet ${char.name}!`} char={char}>
-  <div class="flex flex-col md:grid md:grid-cols-2">
-    <div class="flex justify-center items-center w-full relative">
+  <div class="flex flex-col md:grid md:grid-cols-2 px-8">
+    <div class="flex justify-center items-center w-full relative bg-purple-400 rounded-xl">
       <Image
         src={char.img}
         alt={char.name}
-        class={"w-auto z-10 max-h-[400px] md:max-h-[700px]"}
+        class={"w-auto z-10 max-h-[400px] md:max-h-[700px] py-2"}
         loading={"eager"}
         transition:name={`char-img-${char.id}`}
       />
