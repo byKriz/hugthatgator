@@ -1,15 +1,37 @@
 ---
-
+import { Image } from "astro:assets";
 import CharacterLayout from "../../../layouts/CharacterLayout.astro";
 import type { CharacterType } from "../../../models/CharacterType";
 
 interface Props {
-    char: CharacterType
+  char: CharacterType;
 }
 
-const {char} = Astro.props
+const { char } = Astro.props;
 ---
 
-<CharacterLayout title="char" char={char}>
-    <h1>{char.name}</h1>
+<CharacterLayout title={`Meet ${char.name}!`} char={char}>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <Image
+      src={char.img}
+      alt={char.name}
+      class={"w-[300px]"}
+      transition:name={`char-img-${char.id}`}
+    />
+    <div class="flex flex-col">
+      <h1
+        transition:name={`char-name-${char.id}`}
+        class="font-semibold text-4xl"
+      >
+        Meet
+        <span class="font-bold">{char.name}</span>
+      </h1>
+    </div>
+  </div>
+  <!-- <img
+    src={char.img}
+    alt={char.name}
+    class={"w-[300px]"}
+    transition:name={`char-img-${char.id}`}
+  /> -->
 </CharacterLayout>

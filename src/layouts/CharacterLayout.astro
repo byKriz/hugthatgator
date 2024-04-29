@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 
@@ -37,18 +39,20 @@ const description =
     <meta property="og:image:alt" content="I Wani Hug That Gator - Cover" />
 
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="flex flex-col items-center relative">
     <div class="bg-room object-cover w-screen h-screen fixed -z-10"></div>
-    <NavBar />
-    <HeaderContainer />
+    <!-- <NavBar /> -->
+    <!-- <HeaderContainer /> -->
     <main
-      class="text-white flex flex-col justify-center items-center w-full py-8
-    bg-gradient-to-t to-slate-700/75 via-emerald-950/75 from-violet-950/75 backdrop-blur-lg"
+      class="text-white flex flex-col justify-center items-center w-full pt-8
+    bg-gradient-to-t to-slate-700/75 via-emerald-950/75 
+    from-violet-950/75 backdrop-blur-lg min-h-screen pb-[100px]"
     >
       <slot />
     </main>
-    <Footer />
+    <Footer className="absolute bottom-0 left-0"/>
   </body>
 </html>
 <style is:global>

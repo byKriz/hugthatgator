@@ -2,12 +2,12 @@
 import type { CharacterType } from "../models/CharacterType";
 
 import oliviaImg from "../../public/characters/olivia.webp";
-import incoImg from "../../public/characters/olivia.webp";
-import damienImg from "../../public/characters/olivia.webp";
-import lizImg from "../../public/characters/olivia.webp";
-import iadakanImg from "../../public/characters/olivia.webp";
-import benImg from "../../public/characters/olivia.webp";
-import miaImg from "../../public/characters/olivia.webp";
+import incoImg from "../../public/characters/inco.webp";
+import damienImg from "../../public/characters/damien.webp";
+import lizImg from "../../public/characters/liz.webp";
+import iadakanImg from "../../public/characters/iadakan.webp";
+import benImg from "../../public/characters/ben.webp";
+import miaImg from "../../public/characters/mia.webp";
 
 export const CHARACTERS: CharacterType[] = [
   {
@@ -21,6 +21,11 @@ export const CHARACTERS: CharacterType[] = [
     img: incoImg,
   },
   {
+    id: "iadakan",
+    name: "Iadakan",
+    img: iadakanImg,
+  },
+  {
     id: "damien",
     name: "Damien",
     img: damienImg,
@@ -30,11 +35,7 @@ export const CHARACTERS: CharacterType[] = [
     name: "Liz",
     img: lizImg,
   },
-  {
-    id: "iadakan",
-    name: "Iadakan",
-    img: iadakanImg,
-  },
+
   {
     id: "ben",
     name: "Ben",

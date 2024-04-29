@@ -7,17 +7,27 @@ import footerLogoShort from "../../public/cavemanonlogo.png";
 import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
 <footer
-  class="min-h-[100px] w-full bg-zinc-900 text-white py-4 px-6 flex justify-between items-center"
+  class={`min-h-[100px] w-full bg-zinc-900 text-white py-4 px-6 flex justify-between items-center ${className}`}
 >
   <div>
     <small class="text-base"
       >© Cavemanon Productions 2024
       <br />
       {i18n?.Footer}
-      <a href="https://github.com/byKriz" target="_blank" class="underline underline-offset-1">byKriz</a>
+      <a
+        href="https://github.com/byKriz"
+        target="_blank"
+        class="underline underline-offset-1">byKriz</a
+      >
     </small>
   </div>
 

@@ -1,0 +1,44 @@
+---
+import SectionContainer from "../../containers/SectionContainer.astro";
+import { CHARACTERS } from "../../../consts/characters";
+import Image from "astro/components/Image.astro";
+
+const { pathname } = Astro.url;
+const { currentLocale } = Astro;
+
+const cleanLink = (lang: string | undefined, charId: string) => {
+  if (lang === "es") return `${pathname}/character/${charId}`;
+  return `${pathname}character/${charId}`;
+};
+// console.log(`${pathname}/olivia`);
+console.log(CHARACTERS);
+
+---
+
+<SectionContainer titles="Meet our cast!">
+  <div class="grid grid-cols-3 w-full items-end gap-2">
+    {
+      CHARACTERS.map((char) => (
+        <a href={cleanLink(currentLocale, char.id)}>
+          <article class="flex flex-col items-center justify-center">
+            <Image
+              src={char.img}
+              alt={`Meet ${char.name}`}
+              class={"w-[150px]"}
+              transition:name={`char-img-${char.id}`}
+            />
+            {/* <img
+              src={char.img}
+              alt={`Meet ${char.name}`}
+              class={"w-[80px]"}
+              transition:name={`char-img-${char.id}`}
+            /> */}
+            <span class=" font-bold" transition:name={`char-name-${char.id}`}>
+              {char.name}
+            </span>
+          </article>
+        </a>
+      ))
+    }
+  </div>
+</SectionContainer>

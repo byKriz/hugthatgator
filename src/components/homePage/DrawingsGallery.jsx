@@ -9,9 +9,11 @@ import "swiper/css/thumbs";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
+import { imgList } from "../../consts/drawingsImages";
 
 
-export const DrawingsGallery = ({imgList}) => {
+
+export const DrawingsGallery = () => {
   return (
     <>
       <Swiper
