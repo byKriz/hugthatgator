@@ -1,8 +1,15 @@
 import type { GetImageResult } from "astro";
 
+interface CharData {
+  personality: string;
+  text: string;
+}
+
 export interface CharacterType {
-    id: string;
-    name: string;
-    // img: string;
-    img: ImageMetadata;
+  id: string;
+  name: string;
+  // img: string;
+  img: ImageMetadata;
+  es: CharData;
+  en: CharData;
 }

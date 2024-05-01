@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+
+import type { CharacterType } from "../../models/CharacterType";
+import bgImg from "../../../public/bg/bg_class_iadakan.webp";
+import { checkLanguage, checkChar } from "../../services/utils";
+
+interface Props {
+  link: string;
+  char: CharacterType;
+}
+
+const { link, char} = Astro.props;
+const { currentLocale } = Astro;
+
+// import { getI18N } from "../../i18n";
+// const i18n = getI18N({ currentLocale });
+
+---
+
+<a
+  href={link}
+  class={`hover:scale-110 duration-300 ease-in-out flex justify-center`}
+>
+  <article class="bg-white rounded-xl backdrop-blur-lg h-[400px] w-[300px]">
+    <div class="flex items-center justify-center p-1 relative h-[280px]">
+      <Image
+        src={char.img}
+        alt={`Meet ${char.name}`}
+        loading={"eager"}
+        transition:name={`char-img-${char.id}`}
+        class:list={[" z-10"]}
+      />
+      <Image
+        src={bgImg}
+        alt={"bg"}
+        loading={"eager"}
+        class={"absolute size-full object-cover rounded-t-xl"}
+        transition:name={`bg-img-${char.id}`}
+      />
+    </div>
+
+    <div
+      class="w-full h-[120px] flex flex-col justify-center items-center z-20 px-3 py-2"
+    >
+      <span
+        class="text-start font-bold text-xl w-full"
+        transition:name={`char-name-${char.id}`}
+      >
+        {char.name}
+      </span>
+      <p class="card_preview-text text-gray-500">
+        {char[checkLanguage(currentLocale!)]?.text}
+      </p>
+    </div>
+  </article>
+</a>
+
+<style>
+  .card_preview-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

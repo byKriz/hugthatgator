@@ -36,10 +36,12 @@ const { className } = Astro.props;
     src={footerLogoLarge}
     alt={"footer logo large"}
     class={"w-2/12 object-scale-down hidden md:block "}
+    loading={'lazy'}
   />
   <Image
     src={footerLogoShort}
     alt={"footer logo large"}
     class={"w-2/12 object-scale-down block md:hidden p-1"}
+    loading={"eager"}
   />
 </footer>

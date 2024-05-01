@@ -2,17 +2,22 @@
 import { Image } from "astro:assets";
 import CharacterLayout from "../../../layouts/CharacterLayout.astro";
 import type { CharacterType } from "../../../models/CharacterType";
+import bgImg from "../../../../public/bg/bg_class_iadakan.webp";
+import { checkLanguage } from "../../../services/utils";
 
 interface Props {
   char: CharacterType;
 }
 
 const { char } = Astro.props;
+const { currentLocale } = Astro;
 ---
 
 <CharacterLayout title={`Meet ${char.name}!`} char={char}>
   <div class="flex flex-col md:grid md:grid-cols-2 px-8">
-    <div class="flex justify-center items-center w-full relative bg-purple-400 rounded-xl">
+    <div
+      class="flex justify-center items-center w-full relativerounded-xl relative"
+    >
       <Image
         src={char.img}
         alt={char.name}
@@ -20,13 +25,20 @@ const { char } = Astro.props;
         loading={"eager"}
         transition:name={`char-img-${char.id}`}
       />
+      <Image
+        src={bgImg}
+        alt={"bg-roon"}
+        class={"size-full object-cover absolute rounded-xl"}
+        loading={'eager'}
+        transition:name={`bg-img-${char.id}`}
+      />
       <!-- <div
         class="size-[300px] bg-purple-400 z-0 absolute top-[50%] left-1/4 rounded-full"
       >
       </div> -->
     </div>
     <div
-      class="flex flex-col px-4 [&>p]:bg-black/55 [&>p]:px-4 [&>p]:py-2 [&>p]:rounded-xl [&>p]:mb-4"
+      class="flex flex-col mt-4 md:mt-0 md:px-4 [&>p]:bg-black/55 [&>p]:px-4 [&>p]:py-2 [&>p]:rounded-xl [&>p]:mb-4"
     >
       <h1 class="font-semibold text-4xl px-2 mb-4">
         Meet
@@ -35,20 +47,10 @@ const { char } = Astro.props;
         >
       </h1>
       <p class="">
-        <span>Personality:</span> AMBITIOUS, NAIVE, ASPIRING PHOTOGRAPHER, THE NEW
-        ARRIVAL AT ST. HAMMOND HIGH SCHOOL
+        <span>Personality:</span>
+        {char[checkLanguage(currentLocale!)]?.personality}
       </p>
-      <p>
-        Inco dreams of making a name for himself, and views his senior year as
-        his last shot at it. However, nothing could have prepared him for what
-        the year would throw at him. See through his shades as he bungles along
-        in his new dino-dominated school like a proverbial
-        'primordial-ancestor-out-of-water'. Prepare to grit your teeth as he
-        awkwardly fumbles his way through teenage acceptance (or lack thereof),
-        personal vendettas, parental woes and interspecies conflicts. Who knows,
-        he may even succeed at some of these things if you can manage to help
-        him pull his head out of his ass long enough.
-      </p>
+      <p set:html={char[checkLanguage(currentLocale!)]?.text} />
     </div>
   </div>
   <!-- <img

@@ -2,56 +2,29 @@
 import SectionContainer from "../../containers/SectionContainer.astro";
 import { CHARACTERS } from "../../../consts/characters";
 import Image from "astro/components/Image.astro";
+import CharItem from "../CharItem2.astro";
 
 const { pathname } = Astro.url;
-const { currentLocale } = Astro;
 
 const cleanLink = (lang: string | undefined, charId: string) => {
   if (lang === "es") return `${pathname}/character/${charId}`;
   return `${pathname}character/${charId}`;
 };
+
+import { getI18N } from "../../../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer titles="Meet our cast!">
-  <div class="grid grid-cols-2 md:grid-cols-3 w-full items-end gap-6">
+<SectionContainer titles={i18n?.HomePage.CharSection.Title}>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full items-end gap-4 lg:gap-12">
     {
       CHARACTERS.map((char, index) => {
         console.log({ char: char.name, index });
+        const name = char.name
 
         return (
-          <a
-            href={cleanLink(currentLocale, char.id)}
-            class={` bg-gray-500/70 rounded-xl p-5 backdrop-blur-lg`}
-          >
-            <article class="[&>div>img]:">
-              <div class=" flex items-center justify-center p-5 ">
-                <Image
-                  src={char.img}
-                  alt={`Meet ${char.name}`}
-                  loading={"lazy"}
-                  transition:name={`char-img-${char.id}`}
-                  class:list={[
-                    "w-auto h-[200px] hover:scale-110 duration-300 ease-in-out",
-                    {
-                      "-ml-4": char.id === "iadakan",
-                      "-ml-9": char.id === "damien",
-                      "-ml-5": char.id === "ben",
-                      "-ml-6": char.id === "mia",
-                    },
-                  ]}
-                />
-              </div>
-
-              <div class="w-full flex justify-center">
-                <span
-                  class="text-center font-bold text-xl"
-                  transition:name={`char-name-${char.id}`}
-                >
-                  {char.name}
-                </span>
-              </div>
-            </article>
-          </a>
+          <CharItem link={cleanLink(currentLocale, char.id)} char={char}/>
         );
       })
     }

@@ -31,11 +31,17 @@ export const english = {
     },
     WaitSection: {
       Title: "Wait, I'm being graded on this?!",
-      text: "Make friends, reconcile enemies, and find out how Inco might repair his miserable excuse for a social life. But beware: The choices you make expand the relationships with Inco's classmates and determine which of the four unique endings you'll receive. Maybe Inco should have spent a little less time studying and a little more time learning how to get along with people...."
+      text: "Make friends, reconcile enemies, and find out how Inco might repair his miserable excuse for a social life. But beware: The choices you make expand the relationships with Inco's classmates and determine which of the four unique endings you'll receive. Maybe Inco should have spent a little less time studying and a little more time learning how to get along with people....",
     },
     DrawingSection: {
-      Title: "Express your creativity!"
-    }
+      Title: "Express your creativity!",
+    },
+    CharSection: {
+      Title: "Meet our cast!",
+    },
+  },
+  Character: {
+    Presentation: "Meet",
   },
   Components: {
     StoreButton: "Buy On",
