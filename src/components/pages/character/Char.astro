@@ -4,6 +4,7 @@ import CharacterLayout from "../../../layouts/CharacterLayout.astro";
 import type { CharacterType } from "../../../models/CharacterType";
 import bgImg from "../../../../public/bg/bg_class_iadakan.webp";
 import { checkLanguage } from "../../../services/utils";
+import ReturnButton from "../../CharPage/ReturnButton.astro";
 
 interface Props {
   char: CharacterType;
@@ -14,14 +15,15 @@ const { currentLocale } = Astro;
 ---
 
 <CharacterLayout title={`Meet ${char.name}!`} char={char}>
-  <div class="flex flex-col md:grid md:grid-cols-2 px-8">
+  <ReturnButton />
+  <div class="flex flex-col lg:grid lg:grid-cols-2">
     <div
-      class="flex justify-center items-center w-full relativerounded-xl relative"
+      class="flex justify-center items-center w-full relativerounded-xl relative md:mb-4"
     >
       <Image
         src={char.img}
         alt={char.name}
-        class={"w-auto z-10 max-h-[400px] md:max-h-[700px] py-2"}
+        class={"w-auto z-10 max-h-[400px] lg:max-h-[700px] py-2"}
         loading={"eager"}
         transition:name={`char-img-${char.id}`}
       />
@@ -38,9 +40,9 @@ const { currentLocale } = Astro;
       </div> -->
     </div>
     <div
-      class="flex flex-col mt-4 md:mt-0 md:px-4 [&>p]:bg-black/55 [&>p]:px-4 [&>p]:py-2 [&>p]:rounded-xl [&>p]:mb-4"
+      class="flex flex-col mt-4 md:mt-0 lg:px-4 [&>p]:bg-black/55 [&>p]:px-4 [&>p]:py-2 [&>p]:rounded-xl [&>p]:mb-4"
     >
-      <h1 class="font-semibold text-4xl px-2 mb-4">
+      <h1 class="font-semibold text-4xl lg:px-2 mb-4">
         Meet
         <span class="font-bold" transition:name={`char-name-${char.id}`}
           >{char.name}</span
