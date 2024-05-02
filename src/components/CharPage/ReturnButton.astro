@@ -3,7 +3,8 @@ import LeftArrowIcon from "../icons/LeftArrowIcon.astro";
 
 const { currentLocale } = Astro;
 
-const cleanReturnLink = () => (currentLocale === "en" ? "/" : "/es");
+const cleanReturnLink = () =>
+  currentLocale === "en" ? "/#characters" : "/es#characters";
 ---
 
 <nav class="w-full py-4">
