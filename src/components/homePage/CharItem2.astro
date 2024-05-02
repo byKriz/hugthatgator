@@ -22,8 +22,8 @@ const { currentLocale } = Astro;
   href={link}
   class={`hover:scale-110 duration-300 ease-in-out flex justify-center`}
 >
-  <article class="bg-white rounded-xl backdrop-blur-lg h-[400px] w-[300px]">
-    <div class="flex items-center justify-center p-1 relative h-[280px]">
+  <article class="bg-white rounded-xl backdrop-blur-lg w-[300px]">
+    <div class="flex items-center justify-center p-1 relative ">
       <Image
         src={char.img}
         alt={`Meet ${char.name}`}
@@ -41,10 +41,10 @@ const { currentLocale } = Astro;
     </div>
 
     <div
-      class="w-full h-[120px] flex flex-col justify-center items-center z-20 px-3 py-2"
+      class="w-full flex flex-col justify-center items-center z-20 p-4 gap-3"
     >
       <span
-        class="text-start font-bold text-xl w-full"
+        class="text-start font-bold text-2xl w-full"
         transition:name={`char-name-${char.id}`}
       >
         {char.name}
@@ -62,5 +62,6 @@ const { currentLocale } = Astro;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    /* text-overflow: ellipsis; */
   }
 </style>
