@@ -1,6 +1,7 @@
 // import img from "../../public/characters/fb_carry.png";
 import type { CharacterType } from "../models/CharacterType";
 
+// Personajes
 import oliviaImg from "../../public/characters/olivia.webp";
 import incoImg from "../../public/characters/inco.webp";
 import damienImg from "../../public/characters/damien.webp";
@@ -9,11 +10,21 @@ import iadakanImg from "../../public/characters/iadakan.webp";
 import benImg from "../../public/characters/ben.webp";
 import miaImg from "../../public/characters/mia.webp";
 
+// Fondos
+import oliviaBg from "../../public/bg/bg_olivia_room_day.webp"
+import incoBg from "../../public/bg/bg_inco_room_day.webp"
+import damienBg from "../../public/bg/bg_damien_house.webp"
+import iadakanBg from "../../public/bg/bg_class_iadakan.webp"
+import lizBg from "../../public/bg/bg_computerroom.webp"
+import benBg from "../../public/bg/bg_school_gala.webp"
+import miaBg from "../../public/bg/bg_cafeteria_base.webp"
+
 export const CHARACTERS: CharacterType[] = [
   {
     id: "olivia",
     name: "Olivia",
     img: oliviaImg,
+    bg: oliviaBg,
     es: {
       personality:
         "Depredador Paralizado, Reclusivo, Artístico, Emocionalmente dependiente de animales pequeños",
@@ -39,6 +50,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "inco",
     name: "Inco",
     img: incoImg,
+    bg: incoBg,
     es: {
       personality:
         "Ambicioso, ingenuo, aspirante a fotógrafo, la recién llegado al instituto St. Hammond",
@@ -63,6 +75,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "iadakan",
     name: "Iadakan",
     img: iadakanImg,
+    bg: iadakanBg,
     es: {
       personality:
         "Pterodáctilo, Profesor de arte en la escuela, Comprensivo, Cree en ti incluso cuando tú no crees en ti",
@@ -86,6 +99,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "damien",
     name: "Damien",
     img: damienImg,
+    bg: damienBg,
     es: {
       personality:
         "Dilopho-Spinosaurus Híbrido, Leal, Ruidoso, El funcionamiento interno de su mente es un enigma",
@@ -107,6 +121,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "liz",
     name: "Liz",
     img: lizImg,
+    bg: lizBg,
     es: {
       personality:
         "Braquiosaurio, inteligente, extrovertido, te dirá el tiempo que hace allí.",
@@ -129,6 +144,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "ben",
     name: "Ben",
     img: benImg,
+    bg: benBg,
     es: {
       personality:
         "Parasaurolophus, Sabelotodo, Presumido, Un sabelotodo en general",
@@ -150,6 +166,7 @@ export const CHARACTERS: CharacterType[] = [
     id: "mia",
     name: "Mia",
     img: miaImg,
+    bg: miaBg,
     es: {
       personality:
         "También un Parasaurolophus, Rudo, Crudo, Le encanta lo teatral (díselo a alguien y te clavará los pinchos de su cola)",

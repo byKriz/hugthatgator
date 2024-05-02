@@ -10,6 +10,7 @@ export interface CharacterType {
   name: string;
   // img: string;
   img: ImageMetadata;
+  bg: ImageMetadata;
   es: CharData;
   en: CharData;
 }
