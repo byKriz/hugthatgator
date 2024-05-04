@@ -2,20 +2,18 @@
 import { ViewTransitions } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
-import NavBar from "../components/NavBar.astro";
-
-import grapImg from "../../public/grap-image.jpg";
-import HeaderContainer from "../components/containers/HeaderContainer.astro";
 import type { CharacterType } from "../models/CharacterType";
-import ReturnButton from "../components/CharPage/ReturnButton.astro";
+import { checkLanguage } from "../services/utils";
+import { getI18N } from "../i18n";
 
 interface Props {
   title: string;
   char: CharacterType;
 }
 
-const { title } = Astro.props;
+const { title, char } = Astro.props;
 const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const description =
   "I Wani Hug that Gator! is a choice-driven narrative about teenagers struggling to find their way. Help Inco, loser highschooler extraordinaire, navigate his budding friendships (and romance!) while surviving being the only human in a dinosaur-filled school.";
@@ -30,13 +28,13 @@ const description =
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content={description} />
+    <meta name="description" content={char[checkLanguage(currentLocale!)].personality} />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="I Wani Hug that Gator!" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={grapImg.src} />
-    <meta property="og:image:alt" content="I Wani Hug That Gator - Cover" />
+    <meta property="og:title" content={`${i18n?.Character.Presentation} ${char.name}!`} />
+    <meta property="og:description" content={char[checkLanguage(currentLocale!)].personality} />
+    <meta property="og:image" content={char.img.src} />
+    <meta property="og:image:alt" content={`I Wani Hug That Gator - ${char.name}`} />
 
     <title>{title}</title>
     <ViewTransitions />
