@@ -13,14 +13,17 @@ interface Props {
 }
 
 const { className } = Astro.props;
+const { pathname } = Astro.url;
+
+const imgLoader = () => (pathname.includes("character") ? "eager" : "lazy");
 ---
 
 <footer
-  class={`min-h-[100px] w-full bg-zinc-900 text-white py-4 px-6 flex justify-between items-center ${className}`}
+  class={`min-h-[100px] w-full bg-zinc-900 text-white py-4 px-6 flex justify-between items-center ${className} gap-2`}
   transition:name="footer-transition"
 >
-  <div>
-    <small class="text-base"
+  <div class="min-w-min">
+    <small class="text-xs md:text-base"
       >© Cavemanon Productions 2024
       <br />
       {i18n?.Footer}
@@ -31,17 +34,35 @@ const { className } = Astro.props;
       >
     </small>
   </div>
+  <div class="w-[50%]">
+    <ul
+      class="flex flex-col w-full justify-center md:justify-around gap-1 md:flex-row md:gap-3 text-sm [&>li]:text-center"
+    >
+      <li class="hover:underline">
+        <a href="https://twitter.com/cavemanon" target="_blank">Youtube</a>
+      </li>
+      <li class="hover:underline">
+        <a
+          href="https://www.youtube.com/channel/UC8JrVOgTSR8qE8bwhoR_IgQ"
+          target="_blank">Twitter/X</a
+        >
+      </li>
+      <li class="hover:underline">
+        <a href="https://cavemanon.newgrounds.com" target="_blank">Newground</a>
+      </li>
+    </ul>
+  </div>
 
   <Image
     src={footerLogoLarge}
     alt={"footer logo large"}
-    class={"w-2/12 object-scale-down hidden md:block "}
-    loading={'lazy'}
+    class={"w-2/12 object-scale-down hidden md:block"}
+    loading={imgLoader()}
   />
   <Image
     src={footerLogoShort}
     alt={"footer logo large"}
     class={"w-2/12 object-scale-down block md:hidden p-1"}
-    loading={"eager"}
+    loading={imgLoader()}
   />
 </footer>

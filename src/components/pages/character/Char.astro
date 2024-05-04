@@ -6,15 +6,18 @@ import bgImg from "../../../../public/bg/bg_class_iadakan.webp";
 import { checkLanguage } from "../../../services/utils";
 import ReturnButton from "../../CharPage/ReturnButton.astro";
 
+import { getI18N } from "../../../i18n";
+
 interface Props {
   char: CharacterType;
 }
 
 const { char } = Astro.props;
 const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
-<CharacterLayout title={`Meet ${char.name}!`} char={char}>
+<CharacterLayout title={`${i18n?.Character.Presentation} ${char.name}!`} char={char}>
   <ReturnButton />
   <div class="flex flex-col lg:grid lg:grid-cols-2">
     <div
@@ -31,7 +34,7 @@ const { currentLocale } = Astro;
         src={char.bg}
         alt={"bg-roon"}
         class={"size-full object-cover absolute rounded-xl"}
-        loading={'eager'}
+        loading={"eager"}
         transition:name={`bg-img-${char.id}`}
       />
       <!-- <div
@@ -55,10 +58,5 @@ const { currentLocale } = Astro;
       <p set:html={char[checkLanguage(currentLocale!)]?.text} />
     </div>
   </div>
-  <!-- <img
-    src={char.img}
-    alt={char.name}
-    class={"w-[300px]"}
-    transition:name={`char-img-${char.id}`}
-  /> -->
+
 </CharacterLayout>
